@@ -1,0 +1,22 @@
+##### shortest path---A
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n, a, b;
+    cin >> n >> a >> b;
+    int x = a ^ b;
+    int c = 0;
+    while(x){
+        if((x & 1) == 1){
+            c++;
+        }
+        x = x >> 1;
+    }
+    if((c % 2) == 0){
+        cout << (c / 2);
+    }
+    else{
+        cout << -1;
+    }
+    return 0;
+}
