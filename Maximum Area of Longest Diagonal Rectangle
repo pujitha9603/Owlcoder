@@ -1,0 +1,13 @@
+class Solution:
+    def areaOfMaxDiagonal(self, dimensions: List[List[int]]) -> int:
+        d = 0
+        m = 0
+        for i in dimensions:
+            dd = ((i[0]*i[0])+(i[1]*i[1]))**0.5
+            mm = i[0] * i[1]
+            if d < dd:
+                d = dd
+                m = mm
+            elif d == dd:
+                m = max(m, mm)
+        return m
