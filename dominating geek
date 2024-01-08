@@ -1,0 +1,22 @@
+
+from typing import List
+
+
+class Solution:
+    def minOPs(self, n : int, A : List[int]) -> int:
+        # code here
+        d = {}
+        for i in A:
+            if i not in d:
+                d[i] = 1
+            else:
+                d[i] += 1
+        l = list(d.values())
+        a = sorted(l)[::-1]
+        i = 0
+        c = 0
+        while(c<(n//2)+1):
+            c += a[i]
+            i += 1
+            
+        return i - 1
