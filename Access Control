@@ -1,0 +1,18 @@
+
+# cook your dish here
+def access_con(s, x):
+    if s[0] == '0':
+        return "NO"
+    a = x 
+    for i in s:
+        if i == '1':
+            x = a
+        elif i == '0' and x == 0:
+            return "NO"
+        elif i == '0'  and x:
+            x -= 1
+    return "YES"
+for t in range(int(input())):
+    n, x = map(int,input().split())
+    s = input()
+    print(access_con(s, x))
