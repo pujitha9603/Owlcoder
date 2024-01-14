@@ -1,0 +1,25 @@
+class Solution:
+    def closeStrings(self, word1: str, word2: str) -> bool:
+        if len(word1) != len(word2):
+            return 0
+        else:
+            d1 = {}
+            for i in word1:
+                if i not in d1:
+                    d1[i] = 1
+                else:
+                    d1[i] += 1
+            d2 = {}
+            for i in word2:
+                if i not in d2:
+                    d2[i] = 1
+                else:
+                    d2[i] += 1
+            l1 = sorted(list(d1.values()))
+            l2 = sorted(list(d2.values()))
+            s1 = sorted(list(d1.keys()))
+            s2 = sorted(list(d2.keys()))
+            if l1 == l2 and s1 == s2:
+                return 1
+            else:
+                return 0
